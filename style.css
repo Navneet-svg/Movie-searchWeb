@@ -1,0 +1,269 @@
+/* ----------------------------------
+   GLOBAL
+---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background Image */
+.background-overlay {
+    background: url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4")
+        center/cover no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+/* ----------------------------------
+   HEADER
+---------------------------------- */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.7);
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffdd55;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Add emoji next to CineSpot */
+.logo::after {
+    content: " 🎞";
+}
+
+/* ----------------------------------
+   SEARCH BAR
+---------------------------------- */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-box input {
+    padding: 10px 16px;
+    width: 260px;
+    border-radius: 6px;
+    border: none;
+    background: #1e1e1e;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #ffdd55;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #ffcc22;
+}
+
+/* ----------------------------------
+   SECTION
+---------------------------------- */
+.movie-section {
+    margin-top: 40px;
+    padding: 0 40px;
+}
+
+.movie-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Horizontal Movie List */
+.movie-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 14px;
+    scroll-behavior: smooth;
+}
+
+.movie-row::-webkit-scrollbar {
+    height: 6px;
+}
+.movie-row::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+/* ----------------------------------
+   MOVIE CARD
+---------------------------------- */
+.movie-card {
+    width: 180px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+}
+
+.movie-card:hover {
+    transform: scale(1.07);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-info h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.rating-year {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* ----------------------------------
+   POPUP MODAL
+---------------------------------- */
+#popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+#popupContent {
+    background: #141414;
+    width: 90%;
+    max-width: 380px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+#popupContent h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup-img {
+    width: 85%;
+    max-height:320px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    object-fit: cover;
+}
+
+#popupClose {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: #ffdd55;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#popupClose:hover {
+    background: #ffcc22;
+}
+
+/* Popup animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+
+/* ----------------------------------
+   RESPONSIVE DESIGN
+---------------------------------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .search-box input {
+        width: 220px;
+    }
+
+    .movie-card {
+        width: 160px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    header {
+        padding: 16px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .search-box {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-box input {
+        width: 70%;
+    }
+
+    .movie-section {
+        padding: 0 20px;
+    }
+
+    .movie-card {
+        width: 140px;
+    }
+}

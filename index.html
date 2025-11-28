@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINESPOT🎞</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Overlay -->
+    <div class="background-overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <h1 class="logo">CINESPOT</h1>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search movies...">
+            <button id="searchBtn">Search</button>
+        </div>
+    </header>
+
+    <!-- Search Results Section (hidden initially, shown on search) -->
+    <section class="movie-section" id="searchSection">
+        <h2>Search Results</h2>
+        <div class="movie-row" id="searchResults"></div>
+    </section>
+
+    <!-- Top Movies Section -->
+    <section class="movie-section">
+        <h2>Top Movies</h2>
+        <div class="movie-row" id="topMovies"></div>
+    </section>
+
+    <!-- Hollywood Movies Section -->
+    <section class="movie-section">
+        <h2>Hollywood Movies</h2>
+        <div class="movie-row" id="hollywoodMovies"></div>
+    </section>
+
+    <!-- Bollywood Movies Section -->
+    <section class="movie-section">
+        <h2>Bollywood Movies</h2>
+        <div class="movie-row" id="bollywoodMovies"></div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box" id="popupBox">
+            <span class="popup-close" id="popupClose">&times;</span>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
